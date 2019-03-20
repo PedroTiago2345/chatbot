@@ -1,0 +1,31 @@
+body {
+  padding: 50px;
+  font: 45px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url(https://media.sproutsocial.com/uploads/2018/03/The-Complete-Guide-to-Chatbots-b605987a-a012-4ed4-a490-14ad11f88ac5.png);
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: -50%;
+  background-size: 70%;
+  background-color: #816FEA;
+}
+
+p{
+  font: 25px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+input[type=submit] {
+  height: 50px;
+  width: 150px
+}
+
+button{
+  text-align:center;
+  color:blue;
+  background-color: white;
+  width: 150px;
+  height: 50px;
+}
