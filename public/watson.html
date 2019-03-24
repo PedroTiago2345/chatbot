@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>watson-app</title>
+    <link rel='stylesheet' href='/stylesheets/styleWatson.css' />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         // variável para controlar o contexto do diálogo
@@ -13,7 +14,7 @@
             // recupera mensagem digitada pelo usuário e exibe na tela
             var texto = document.chatForm.texto.value;
             chat = document.getElementById('chat');
-            chat.innerHTML += texto + "<br>";
+            chat.innerHTML += "<pUser>Usuario:" + texto + "</pUser>" + "<br>";
             // cria objeto para envio para a API
             var input = {
                 text: texto,
@@ -36,7 +37,7 @@
                     // caso os dados tenham retornado com sucesso
                     else{
                         // exibe retorno da API e recupera o contexto para o próximo diálogo
-                        chat.innerHTML += dados.data.output.text + "<br>";
+                        chat.innerHTML += "<pChatbot>Chatbot:" + dados.data.output.text + "</pChatbot>"+ "<br>";
                         context = JSON.stringify(dados.data.context);
                     }
                 }
@@ -46,8 +47,13 @@
 </head>
 
 <body>
+    <div id='bodybox' align="center">
+            <h1>Chatbot da PUC-Campinas</h1>
+            <div id='chatborder' style="width: 600px; height: 700px; overflow-y: auto;">
+                <div id="chat"></div>
+            </div>
     <form name="chatForm" method="post">
-        <input type="text" name="texto" />
+        <input type="text" name="texto" id="chatline" />
         <input type="button" onClick="enviarMensagem();" value="Enviar">
     </form>
     <div id="chat"></div>
